@@ -661,3 +661,246 @@ public class ListOdd {
 }
 ```
 
+## Removing Prime Nums from a list
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListPrime {
+
+    public static boolean isPrime(int num) {
+        // int divCount = 0;
+        if (num <= 1) return false; 
+        // int count = 0;
+
+        for (int i = 2; i < num; i++) {
+            // i*i < n
+            if (num % i == 0) {
+                // System.out.println("ran " + (count++));
+                return false; 
+                // divCount++;
+            }
+
+        }
+        return true;
+
+        // if (divCount >= 1){
+        //     return false;            
+        // } else{
+        //     return true;
+        // }
+    }
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.add(8);
+        numbers.add(9);
+        numbers.add(10);
+        numbers.add(11);
+        numbers.add(12);
+        numbers.add(13);
+        numbers.add(14);
+
+        // numbers.add(1,7);
+        // numbers.add(2,11);
+
+        // Will not work properly if you add on indexes;
+
+        System.out.println("Org List: " + numbers);
+
+        for (int i = numbers.size() - 1; i >= 0; i--) {
+
+            // System.out.println(i + " " + numbers.get(i));
+
+            if (isPrime(numbers.get(i))) {
+                numbers.remove(i); 
+            }
+            // we are removing element so indexes will be adjusted
+            // to remove it without any problem you can start from the last to 0 index or decrement i;
+        }
+
+        System.out.println("Removed Prime: " + numbers);
+    }
+}
+
+
+```
+
+
+# Comparison between Sorting Algorithms
+
+### Sorting algorithms arranged in ascending order of their efficiency based on the average case time complexity, along with their best, average, and worst case time complexities:
+
+
+| Sorting Algorithm | Best Case Time Complexity | Average Case Time Complexity | Worst Case Time Complexity | Space Complexity |
+|-------------------|---------------------------|------------------------------|----------------------------|------------------|
+| **Bubble Sort**   | O(n)                      | O(n²)                       | O(n²)                     | O(1)             |
+| **Selection Sort**| O(n²)                     | O(n²)                       | O(n²)                     | O(1)             |
+| **Insertion Sort**| O(n)                      | O(n²)                       | O(n²)                     | O(1)             |
+| **Shell Sort**    | O(n log n)               | O(n^(3/2))                  | O(n²)                     | O(1)             |
+| **Quick Sort**    | O(n log n)               | O(n log n)                  | O(n²)                     | O(log n)         |
+| **Merge Sort**    | O(n log n)               | O(n log n)                  | O(n log n)                | O(n)             |
+| **Heap Sort**     | O(n log n)               | O(n log n)                  | O(n log n)                | O(1)             |
+| **Timsort**       | O(n)                      | O(n log n)                  | O(n log n)                | O(n)             |
+| **Bucket Sort**   | O(n + k)                 | O(n + k)                    | O(n²)                     | O(n)             |
+| **Counting Sort** | O(n + k)                 | O(n + k)                    | O(n + k)                  | O(k)             |
+| **Radix Sort**    | O(nk)                    | O(nk)                       | O(nk)                     | O(n + k)         |
+
+### Explanation of columns:
+
+*   **Best Case**: The time complexity when the input is in the most favorable condition (often sorted for comparison-based algorithms).
+*   **Average Case**: The expected time complexity for a random input.
+*   **Worst Case**: The time complexity in the worst possible scenario (e.g., completely reversed input for some algorithms).
+*   **Space Complexity**: The amount of extra memory required beyond the input array.
+
+### Key Notes:
+
+*   **Bubble Sort**, **Selection Sort**, and **Insertion Sort** are inefficient with O(n²) complexity in average and worst cases, but Insertion Sort performs well in the best case when the array is nearly sorted.
+*   **Quick Sort** is very fast on average (O(n log n)), but its worst case (O(n²)) can happen if the pivot selection is poor (this can be mitigated by choosing a random or median pivot).
+*   **Merge Sort**, **Heap Sort**, and **Timsort** guarantee O(n log n) time complexity in all cases, but Merge Sort and Timsort use extra space, while Heap Sort works in-place.
+*   **Radix Sort**, **Counting Sort**, and **Bucket Sort** are non-comparison sorts and can achieve linear time complexity (O(n) or O(n + k)) but only work well for specific kinds of data, such as integers or data with limited ranges.
+
+
+## Main Sorts:-
+
+```java
+//Sorts - bubble, selection, insertion
+import java.util.Arrays;
+
+public class sorts {
+
+    static void print_arr(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr = { 5, 4, 3, 2, 1 };
+        int option = 2;
+
+        if (option == 1) {
+            // bubble sort
+            System.out.print("Bubble Sort : ");
+            for (int i = 0; i < arr.length - 1; i++) {
+                for (int j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                
+                }
+            }
+        } else if (option == 2) {
+            // selection sort
+            System.out.print("Selection Sort : ");
+            for (int i = 0; i < arr.length - 1; i++) {
+                int smallest = i;
+                // System.out.println("Sorted Array, mat : " + Arrays.toString(arr) );
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[smallest] > arr[j]) {
+                        smallest = j;
+                    }
+                }
+                int temp = arr[smallest];
+                arr[smallest] = arr[i];
+                arr[i] = temp;
+            }
+        } else if (option == 3) {
+            // insertion sort
+            System.out.print("Insertion Sort : ");
+            for (int i = 1; i < arr.length; i++) {
+                int current = arr[i];
+                int j = i - 1;
+
+                while (j >= 0 && arr[j] > current) {
+                    arr[j + 1] = arr[j];
+                    j--;
+                }
+
+                arr[j + 1] = current;
+            }
+        } else {
+            System.out.println("Set opion to valid number ");
+        }
+
+        print_arr(arr);
+    }
+}
+```
+
+# Merge Sort - Poster Child of Divide and Conquer
+
+```java
+import java.util.Arrays;
+public class mergesort {
+    public static void main(String[] args) {
+        // int[] data = { 12, 19, 3, 5, 16, 1,9,0 };
+        int[] data = { 4,3,2,1 };
+        System.out.println("Original data:");
+        printArray(data);
+
+        mergeSort(data, 0, data.length - 1);
+
+        System.out.print("\nSorted data : ");
+
+        System.out.println(Arrays.toString(data));
+
+    }
+
+    static void mergeSort(int[] data, int start, int end) {
+        if (start < end) {
+            int mid = (start + end) / 2;
+            // System.out.println("Start: " + start + " Mid: " + mid + " End: " + end);
+            mergeSort(data, start, mid);
+            mergeSort(data, mid + 1, end);
+            merge(data, start, mid, end);
+            
+        }
+    }
+
+    static void merge(int[] data, int start, int mid, int end) {
+        // System.out.println("From Merge : Start: " + start + " Mid: " + mid + " End: " + end);
+        int[] temp = new int[end - start + 1];
+        int i = start, j = mid + 1, k = 0;
+
+        while (i <= mid && j <= end) {
+            if (data[i] <= data[j]) {
+                temp[k++] = data[i++];
+            } else {
+                temp[k++] = data[j++];
+            }
+        }
+
+        while (i <= mid) {
+            temp[k++] = data[i++];
+        }
+        while (j <= end) {
+            temp[k++] = data[j++];
+        }
+
+        // System.out.println("Temp arr : " + Arrays.toString(temp));
+
+        for (i = start; i <= end; i++) { 
+            data[i] = temp[i - start];
+            // System.out.println("I: " + i + "\n" + "Start: " + start);
+        }
+
+
+    }
+
+    static void printArray(int[] data) {
+        for (int value : data) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+    }
+}
+```
