@@ -904,3 +904,67 @@ public class mergesort {
     }
 }
 ```
+
+
+## Recursion:-
+
+Eulid graph of recursion
+
+Inorder 
+Preorder
+Postorder
+
+Backtracking
+Dynamic Programming
+
+
+## Recusion (PreOrder, Inorder, PreOrder):-
+
+```java
+// import java.util.Scanner;
+
+public class Ord {
+
+    void ord(int n){
+
+        if(n == 0){
+            System.out.println("---------");
+            return;
+        }
+
+        System.out.println("Pre: " + n);
+        ord(n-1);
+        System.out.println("In: " + n);
+        ord(n-1);
+        System.out.println("Post: " + n);
+    }
+    public static void main (String[] args){
+        Ord t = new Ord();
+        int n = 2;
+
+        t.ord(n);
+        
+        // Scanner input = new Scanner(System.in);
+        // input.close();
+    }
+}
+```
+Output:
+```bash
+Pre: 2
+Pre: 1
+---------
+In: 1
+---------
+Post: 1
+In: 2
+Pre: 1
+---------
+In: 1
+---------
+Post: 1
+Post: 2
+```
+### IMG of REC PIP:
+> ![imgPika](images/eulid6.png)
+
