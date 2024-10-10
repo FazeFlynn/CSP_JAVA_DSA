@@ -966,5 +966,5 @@ Post: 1
 Post: 2
 ```
 ### IMG of REC PIP:
-> ![Eulid graph](images/eulid6.png)
+> ![Eulid graph](images/eulid_2.png)
 
