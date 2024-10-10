@@ -6,6 +6,17 @@
 
 
 ```bash
+
+1 
+2 2 
+3 4 3
+4 6 6
+5 8 9
+
+
+
+---------------------
+
 1 2 3 4 5
 1 2 3 4 5
 1 2 3 4 5
@@ -55,6 +66,11 @@ print odd nums
 9 11 13 15
 17 19 21 23
 ```
+
+### More Patterns here
+> ![More Patterns](https://imgs.search.brave.com/YMAxPCXm7Xubkub-zNThZOKeWfPMBXMbrYCfzhAjzuk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZWVrc2Zvcmdl/ZWtzLm9yZy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMzAyMDEx/MDUzMTkvUGF0dGVy/bi1QcmludGluZy1p/bi1KYXZhLmpwZw)
+
+
 
 # Access Modifiers
 <!-- ===================================================================================== -->
@@ -967,4 +983,5 @@ Post: 2
 ```
 ### IMG of REC PIP:
 > ![Eulid graph](images/eulid_2.png)
+
 
