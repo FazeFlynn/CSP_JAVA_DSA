@@ -182,7 +182,7 @@ String classes in java imlpements three interfaces -
                                                     2. Comparable
                                                     3. charSequence
 
-## Methods of Inter
+## Methods of Interfaces implemented by String Class
 | Interface        | Method                           | Description                                                           |
 |------------------|----------------------------------|-----------------------------------------------------------------------|
 | **Serializable** | *(None)*                         | This is a marker interface without methods.                           |
@@ -984,4 +984,6 @@ Post: 2
 ### IMG of REC PIP:
 > ![Eulid graph](images/eulid_2.png)
 
+
+##### Checking Git
 
